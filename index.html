@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God Image</title>
+    <style>
+        body{
+            background-image: linear-gradient(to top, rgb(0, 191, 255), rgb(0, 30, 255));
+            min-height: 100vh;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 30px 0px 30px 0px;
+        }
+
+        #conteiner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main{
+            height: 500px;
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            gap: 10px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        button{
+            padding: 25px;
+            border-radius: 8px;
+            background-color: brown;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: -370px;
+        }
+
+        img{
+            width: 340px;
+            height: 370px;
+            margin-top: -400px;
+            border: 2px solid black;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gere uma imagem de cachorro clicando no botão abaixo</h1>
+
+    <div id="conteiner">
+        <main>
+            <img id="img" src="" alt="Imagens de cachorros">
+            <button id="botao">Mudar de Cachorro</button>
+        </main>
+    </div>
+
+
+    <script>
+        //Selecionando elemento via DOM.
+        const Botao = document.getElementById('botao');
+        const Imagem = document.getElementById('img');
+        const ValorLocal = localStorage.getItem("cachorros"); 
+
+        if(ValorLocal !== null){
+            Imagem.src = ValorLocal;
+        };
+
+        
+        Botao.addEventListener('click', () => {
+            
+            //Buscando imagens da API.
+            const BuscarImagem = async () => {
+                //Usando o try e catch para lidar com requisições da API que não funcionaram.
+                try {
+                    const ImagemCachorros = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const Cachorros = await ImagemCachorros.json();
+                    Imagem.src = Cachorros.message;
+
+                    //Salvando a imagem no armazenamento local.
+                    localStorage.setItem("cachorros", Cachorros.message);
+                    } catch (error) {
+                        console.log("Houve um erro ao buscar as imagens da API.")
+                    };
+            };
+            
+            //Chamando a função.
+            BuscarImagem()
+            
+        });
+    </script>
+</body>
+</html>
