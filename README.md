@@ -8,6 +8,7 @@ Interface do projeto:
 
 📝 **Sobre o projeto**
 
+Nesse projeto, coloquei em prática tudo que aprendi sobre assincronicidade em JavaScript, Local Storage, APIs, como fazer requisições de APIs usando funções assíncronas e como guardar esses dados no armazenamneto interno do navegador.
 
 
 ### Tecnologias Utilizadas
@@ -25,7 +26,8 @@ Neste projeto, foquei em aplicar os seguintes conceitos:
 * Assincronicidade em JavaScript;
 * Local Storage;
 * Add Event Listener com o método 'click';
-* Responsividade usando media query.
+* FlexBox para a centralização das tags;
+* Responsividade usando Media Query.
   
 
 ### Como funciona?
