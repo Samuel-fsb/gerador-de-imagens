@@ -28,8 +28,15 @@ Neste projeto, foquei em aplicar os seguintes conceitos:
 * Add Event Listener com o método 'click';
 * FlexBox para a centralização das tags;
 * Responsividade usando Media Query.
-  
 
 ### Como funciona?
 * O usuário clica no botão e recebe uma foto aleatória de um cachorro que a API buscou, e essa imagem é guardada no armazenamento interno do navagador.
 
+# Desenvolvedor
+<img width="120" alt="foto-minha-2" src="https://github.com/user-attachments/assets/6af9da35-0b7f-4034-89ad-e247e1140f8c" />
+
+
+[Samuel Bezerra](https://github.com/Samuel-fsb)
+
+# Licença
+Esse projeto é licenciado pelo [MIT Licence](https://opensource.org/license/MIT)
